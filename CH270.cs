@@ -88,7 +88,7 @@ namespace CH270.ConfigUI
 
         private void InitializeComponent()
         {
-            this.Text = "九州风神 CH270 数显控制中心";
+            this.Text = "九州風神 CH270 數顯控制中心";
             this.Size = new Size(680, 520);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -107,7 +107,7 @@ namespace CH270.ConfigUI
             this.Controls.Add(topPanel);
 
             Label lblTitle = new Label();
-            lblTitle.Text = "数显系统";
+            lblTitle.Text = "數顯系統";
             lblTitle.Font = new Font("Microsoft YaHei UI", 13f, FontStyle.Bold);
             lblTitle.Location = new Point(20, 18);
             lblTitle.AutoSize = true;
@@ -131,7 +131,7 @@ namespace CH270.ConfigUI
             topPanel.Controls.Add(rbOn);
 
             cbAutoStart = new CheckBox();
-            cbAutoStart.Text = "开机自启动";
+            cbAutoStart.Text = "開機自動啟動";
             cbAutoStart.Location = new Point(340, 20);
             cbAutoStart.AutoSize = true;
             cbAutoStart.CheckedChanged += (s, e) => {
@@ -142,7 +142,7 @@ namespace CH270.ConfigUI
             topPanel.Controls.Add(cbAutoStart);
 
             btnExitComplete = new Button();
-            btnExitComplete.Text = "完全退出";
+            btnExitComplete.Text = "完全結束";
             btnExitComplete.Size = new Size(82, 30);
             btnExitComplete.Location = new Point(475, 16);
             btnExitComplete.FlatStyle = FlatStyle.Flat;
@@ -161,7 +161,7 @@ namespace CH270.ConfigUI
             topPanel.Controls.Add(btnExitComplete);
 
             Button btnUninstall = new Button();
-            btnUninstall.Text = "卸载服务";
+            btnUninstall.Text = "解除安裝服務";
             btnUninstall.Size = new Size(82, 30);
             btnUninstall.Location = new Point(570, 16);
             btnUninstall.FlatStyle = FlatStyle.Flat;
@@ -171,8 +171,8 @@ namespace CH270.ConfigUI
             btnUninstall.Cursor = Cursors.Hand;
             btnUninstall.Click += (s, e) => {
                 DialogResult dr = MessageBox.Show(
-                    "确定要彻底卸载并清理 CH270 的后台系统服务与自启动项吗？\n\n（仅注销系统服务，不会删除本文件夹）",
-                    "卸载清理确认",
+                    "確定要徹底解除安裝並清理 CH270 的背景系統服務與自動啟動項目嗎？\n\n（僅移除系統服務，不會刪除本資料夾）",
+                    "解除安裝確認",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
@@ -194,9 +194,9 @@ namespace CH270.ConfigUI
             // Main Content Layout
             int contentY = 80;
 
-            // Group 1: 显示模式
+            // Group 1: 顯示模式
             Label lblGroup1 = new Label();
-            lblGroup1.Text = "显示模式选择：";
+            lblGroup1.Text = "顯示模式選擇：";
             lblGroup1.Location = new Point(25, contentY);
             lblGroup1.AutoSize = true;
             lblGroup1.Font = new Font("Microsoft YaHei UI", 10.5f, FontStyle.Bold);
@@ -205,7 +205,7 @@ namespace CH270.ConfigUI
             contentY += 30;
             btnModeCpu = CreateModeButton("CPU 模式", 25, contentY, "CPU");
             btnModeGpu = CreateModeButton("GPU 模式", 185, contentY, "GPU");
-            btnModeCycle = CreateModeButton("自动轮播 (CPU/GPU)", 345, contentY, "CYCLE");
+            btnModeCycle = CreateModeButton("自動輪播 (CPU/GPU)", 345, contentY, "CYCLE");
 
             this.Controls.Add(btnModeCpu);
             this.Controls.Add(btnModeGpu);
@@ -213,9 +213,9 @@ namespace CH270.ConfigUI
 
             contentY += 60;
 
-            // Group 2: 轮播间隔设置
+            // Group 2: 輪播間隔設定
             Label lblGroup2 = new Label();
-            lblGroup2.Text = "轮播间隔设置：";
+            lblGroup2.Text = "輪播間隔設定：";
             lblGroup2.Location = new Point(25, contentY);
             lblGroup2.AutoSize = true;
             lblGroup2.Font = new Font("Microsoft YaHei UI", 10.5f, FontStyle.Bold);
@@ -231,7 +231,7 @@ namespace CH270.ConfigUI
             this.Controls.Add(btnInterval7);
 
             Label lblCustomInt = new Label();
-            lblCustomInt.Text = "自定义间隔:";
+            lblCustomInt.Text = "自訂間隔:";
             lblCustomInt.Location = new Point(400, contentY + 6);
             lblCustomInt.AutoSize = true;
             this.Controls.Add(lblCustomInt);
@@ -257,9 +257,9 @@ namespace CH270.ConfigUI
 
             contentY += 60;
 
-            // Group 3: 硬件探针与单位
+            // Group 3: 硬體探頭與單位
             Label lblGroup3 = new Label();
-            lblGroup3.Text = "风扇探针与温度单位：";
+            lblGroup3.Text = "風扇探頭與溫度單位：";
             lblGroup3.Location = new Point(25, contentY);
             lblGroup3.AutoSize = true;
             lblGroup3.Font = new Font("Microsoft YaHei UI", 10.5f, FontStyle.Bold);
@@ -267,7 +267,7 @@ namespace CH270.ConfigUI
 
             contentY += 30;
             Label lblFan = new Label();
-            lblFan.Text = "CPU风扇接口:";
+            lblFan.Text = "CPU 風扇介面:";
             lblFan.Location = new Point(25, contentY + 4);
             lblFan.AutoSize = true;
             this.Controls.Add(lblFan);
@@ -288,13 +288,13 @@ namespace CH270.ConfigUI
             this.Controls.Add(cmbFan);
 
             Label lblUnit = new Label();
-            lblUnit.Text = "温度单位:";
+            lblUnit.Text = "溫度單位:";
             lblUnit.Location = new Point(340, contentY + 4);
             lblUnit.AutoSize = true;
             this.Controls.Add(lblUnit);
 
             rbUnitC = new RadioButton();
-            rbUnitC.Text = "摄氏度 (℃)";
+            rbUnitC.Text = "攝氏度 (℃)";
             rbUnitC.Location = new Point(415, contentY + 2);
             rbUnitC.AutoSize = true;
             rbUnitC.Checked = true;
@@ -302,7 +302,7 @@ namespace CH270.ConfigUI
             this.Controls.Add(rbUnitC);
 
             rbUnitF = new RadioButton();
-            rbUnitF.Text = "华氏度 (℉)";
+            rbUnitF.Text = "華氏度 (℉)";
             rbUnitF.Location = new Point(520, contentY + 2);
             rbUnitF.AutoSize = true;
             rbUnitF.CheckedChanged += (s, e) => { if (rbUnitF.Checked) { tempUnit = "F"; SaveConfig(); } };
@@ -321,7 +321,7 @@ namespace CH270.ConfigUI
             this.Controls.Add(bottomPanel);
 
             lblServiceStatus = new Label();
-            lblServiceStatus.Text = "● 后台服务状态：检查中...";
+            lblServiceStatus.Text = "● 背景服務狀態：檢查中...";
             lblServiceStatus.ForeColor = Color.FromArgb(40, 167, 69);
             lblServiceStatus.Font = new Font("Microsoft YaHei UI", 9.5f, FontStyle.Bold);
             lblServiceStatus.Location = new Point(20, 10);
@@ -329,7 +329,7 @@ namespace CH270.ConfigUI
             bottomPanel.Controls.Add(lblServiceStatus);
 
             Label lblTip = new Label();
-            lblTip.Text = "说明：所有配置实时生效。CPU模式自动交替轮播睿频与风扇；关闭窗口服务静默运行，不常驻托盘。";
+            lblTip.Text = "說明：所有設定即時生效。CPU 模式會自動交替輪播睿頻與風扇；關閉視窗後服務會靜默執行，不會常駐系統匣。";
             lblTip.ForeColor = Color.FromArgb(120, 125, 135);
             lblTip.Font = new Font("Microsoft YaHei UI", 8.5f);
             lblTip.Location = new Point(20, 32);
@@ -464,17 +464,17 @@ namespace CH270.ConfigUI
 
             if (displayRunning && sensorRunning)
             {
-                lblServiceStatus.Text = "● 系统运行状态：正常运行 (硬件探针 + 数显推送稳定连接)";
+                lblServiceStatus.Text = "● 系統執行狀態：正常執行（硬體探頭 + 數顯推送穩定連線）";
                 lblServiceStatus.ForeColor = Color.FromArgb(40, 167, 69);
             }
             else if (displayRunning)
             {
-                lblServiceStatus.Text = "▲ 系统运行状态：数显推送运行中，等待硬件探针启动...";
+                lblServiceStatus.Text = "▲ 系統執行狀態：數顯推送執行中，等待硬體探頭啟動...";
                 lblServiceStatus.ForeColor = Color.FromArgb(255, 152, 0);
             }
             else
             {
-                lblServiceStatus.Text = "○ 系统运行状态：后台服务已停止";
+                lblServiceStatus.Text = "○ 系統執行狀態：背景服務已停止";
                 lblServiceStatus.ForeColor = Color.FromArgb(108, 117, 125);
             }
         }
@@ -630,12 +630,12 @@ namespace CH270.ConfigUI
             if (!ch270Installed || !pathMatches || !canStop)
             {
                 string promptMsg = !ch270Installed
-                    ? "欢迎使用 九州风神 CH270 数显独立控制系统！\n\n检测到首次运行，需要为您一键注册并启动底层硬件传感器系统服务。\n点击【确定】将自动完成配置并点亮屏幕！"
-                    : "检测到底层硬件服务需要配置完全退出权限（释放文件夹锁定）与路径同步。\n\n点击【确定】将自动更新服务路径与免提权退出权限，支持自由重命名文件夹！";
+                    ? "歡迎使用 九州風神 CH270 數顯獨立控制系統！\n\n偵測到首次執行，需要為您一鍵註冊並啟動底層硬體感應器系統服務。\n點擊【確定】將自動完成設定並點亮螢幕！"
+                    : "偵測到底層硬體服務需要設定完全結束權限（釋放資料夾鎖定）與路徑同步。\n\n點擊【確定】將自動更新服務路徑與免提權結束權限，支援自由重新命名資料夾！";
 
                 DialogResult dr = MessageBox.Show(
                     promptMsg,
-                    "九州风神 CH270 初始化配置",
+                    "九州風神 CH270 初始化設定",
                     MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Information);
 
@@ -651,7 +651,7 @@ namespace CH270.ConfigUI
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("未能获取管理员权限：" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("無法取得系統管理員權限：" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -684,8 +684,8 @@ namespace CH270.ConfigUI
             RunCmd("sc.exe", "delete CH270_SensorService");
             Thread.Sleep(500);
 
-            RunCmd("sc.exe", string.Format("create CH270_SensorService binPath= \"{0}\" start= auto DisplayName= \"CH270 硬件传感器独立服务\"", sensorExe));
-            RunCmd("sc.exe", "description CH270_SensorService \"九州风神 CH270 机箱数显硬件传感器数据桥接服务 (完全独立运行)\"");
+            RunCmd("sc.exe", string.Format("create CH270_SensorService binPath= \"{0}\" start= auto DisplayName= \"CH270 硬體感應器獨立服務\"", sensorExe));
+            RunCmd("sc.exe", "description CH270_SensorService \"九州風神 CH270 機箱數顯硬體感應器資料橋接服務（完全獨立執行）\"");
 
             // Ensure NO failure restart actions so SCM never revives the process when stopped
             try
@@ -753,7 +753,7 @@ namespace CH270.ConfigUI
             try
             {
                 string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-                string lnkPath = Path.Combine(desktop, "CH270 数显控制中心.lnk");
+                string lnkPath = Path.Combine(desktop, "CH270 數顯控制中心.lnk");
                 if (File.Exists(lnkPath)) File.Delete(lnkPath);
             }
             catch { }
